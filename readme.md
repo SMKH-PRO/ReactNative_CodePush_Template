@@ -278,9 +278,6 @@ Done.
 ### MOTIVATON:
 I used to initialize all my react-native projects with this configuration so I thought why not make it a template maybe it may help others save time too!.
 
-This repo is open for open-source contributions!
-
-
 <br/>
 
 <p align="center" style="text-align:center">--- END OF DOCS ---</p>
