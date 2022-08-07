@@ -1,0 +1,44 @@
+enum UserReducer {
+  SET_USER = 'SET_USER',
+}
+enum BookmarkReducer {
+  SET_BOOKMARK = 'SET_BOOKMARK',
+  ADD_BOOKMARK = 'ADD_BOOKMARK',
+}
+enum SearchReducer {
+  SET_SEARCH_HISTORY = 'SET_USER',
+  ADD_SEARCH_HISTORY = 'ADD_SEARCH_HISTORY',
+}
+enum AuthReducer {
+  SET_EMAIL = 'SET_EMAIL',
+}
+enum ThemeReducer {
+  DARK_MODE = 'DARK_MODE',
+  SET_THEME = 'SET_THEME',
+}
+
+enum RewardsReducer {
+  ADD_REWARD_CATEGORY = 'ADD_REWARD_CATEGORY',
+  SET_REWARD_CATEGORY = 'SET_REWARD_CATEGORY',
+  ADD_IN_REWARD_CATEGORY = 'ADD_IN_REWARD_CATEGORY',
+
+  ADD_REWARD_TAG = 'ADD_REWARD_TAG',
+  SET_REWARD_TAG = 'SET_REWARD_TAG',
+  ADD_IN_REWARD_TAG = 'ADD_IN_REWARD_TAG',
+
+  SET_CATEGORIES = 'SET_CATEGORIES',
+  SET_TAGS = 'SET_TAGS',
+  SET_SLIDERS = 'SET_SLIDERS',
+  SELECT_CATEGORY = 'SELECT_CATEGORY',
+  SET_DETAILS = 'SET_DETAILS',
+  ADD_DETAILS = 'ADD_DETAILS',
+}
+
+export {
+  BookmarkReducer,
+  UserReducer,
+  ThemeReducer,
+  RewardsReducer,
+  AuthReducer,
+  SearchReducer,
+};

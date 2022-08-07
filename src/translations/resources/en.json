@@ -1,0 +1,7 @@
+{
+  "welcome": "Welcome to My Alfred",
+  "greetings": {
+    "helloUser": "Hi {{name}}"
+  },
+  "changeLangBtn": "Change Language"
+}
