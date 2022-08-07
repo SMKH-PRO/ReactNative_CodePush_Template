@@ -9,7 +9,6 @@
  */
 
 import React from 'react';
-// import codePush from 'react-native-code-push';
 import { ErrorBoundary } from 'react-error-boundary';
 import {
   setJSExceptionHandler,
@@ -19,6 +18,8 @@ import {
 } from 'react-native-exception-handler';
 import FlashMessage from 'react-native-flash-message';
 import * as Sentry from '@sentry/react-native';
+import codePush from 'react-native-code-push';
+
 import Providers from './Providers';
 import Navigation from './src/navigation/index';
 import { ErrorScreen } from './src/screens';
@@ -28,6 +29,7 @@ import { IS_DEV } from './src/utils/constants';
 import './src/translations';
 
 const routingInstrumentation = new Sentry.ReactNavigationInstrumentation();
+
 if (!IS_DEV) {
   Sentry.init({
     dsn: 'https://a13f12a6c6274fd9a22a2759135e5ce5@o1305163.ingest.sentry.io/6629304',
@@ -77,4 +79,4 @@ const App = () => (
   </ErrorBoundary>
 );
 
-export default IS_DEV ? App : Sentry.wrap(App);
+export default codePush(IS_DEV ? App : Sentry.wrap(App));
