@@ -17,8 +17,8 @@
     "clean-ios": "rm -rf \"~/Library/Developer/Xcode/DerivedData/*\" && cd ios && rm -rf ./Pods && rm Podfile.lock",
     "pods": "cd ios && pod install && cd ../",
     "clean-android": "cd android && ./gradlew clean && cd ../",
-    "codepush-android-stage": "appcenter codepush release-react -a myalfred/myAlfred-1 -d Staging -k codePushPrivateKey.pem",
-    "codepush-android-prod": "appcenter codepush release-react -a myalfred/myAlfred-1 -d Production -k codePushPrivateKey.pem",
+    "codepush-android-stage": "appcenter codepush release-react -a owner/appName -d Staging -k codePushPrivateKey.pem --sourcemap-output --output-dir ./build",
+    "codepush-android-prod": "appcenter codepush release-react -a owner/Appname -d Production -k codePushPrivateKey.pem --sourcemap-output --output-dir ./build",
     "build": "cd android && ./gradlew assembleRelease && cd ../",
     "build-staging": "cd android && ./gradlew assembleReleaseStaging && cd ../ "
   },

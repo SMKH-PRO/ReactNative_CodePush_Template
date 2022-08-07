@@ -31,17 +31,26 @@ import './src/translations';
 const routingInstrumentation = new Sentry.ReactNavigationInstrumentation();
 
 if (!IS_DEV) {
-  Sentry.init({
-    dsn: 'https://a13f12a6c6274fd9a22a2759135e5ce5@o1305163.ingest.sentry.io/6629304',
-    tracesSampleRate: 0.2,
-    integrations: [
-      new Sentry.ReactNativeTracing({
-        // Pass instrumentation to be used as `routingInstrumentation`
-        routingInstrumentation,
-        // ...
-      }),
-    ],
-  });
+  codePush
+    .getUpdateMetadata()
+    .then(update => {
+      if (update) {
+        Sentry.init({
+          dsn: 'https://a13f12a6c6274fd9a22a2759135e5ce5@o1305163.ingest.sentry.io/6629304',
+          tracesSampleRate: 0.2,
+          integrations: [
+            new Sentry.ReactNativeTracing({
+              // Pass instrumentation to be used as `routingInstrumentation`
+              routingInstrumentation,
+              // ...
+            }),
+          ],
+          release: `${update.appVersion}+codepush:${update.label}`,
+          dist: update.label,
+        });
+      }
+    })
+    .catch(devLog.error);
 }
 
 const errorHandler: JSExceptionHandler = (e, isFatal) => {

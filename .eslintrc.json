@@ -43,6 +43,7 @@
     "no-promise-executor-return": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
+    "promise/always-return": "warn",
     "react/jsx-uses-react": 1,
     "@typescript-eslint/no-unused-vars": "error",
     "react-native/no-unused-styles": ["error", { "enableImportsCheck": true }],
