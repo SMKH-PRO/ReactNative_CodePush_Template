@@ -46,8 +46,6 @@ before going through the following steps, please make sure that the project is i
   }
 ```
 
----
-
 3. Run the newly added script with command `yarn prepare` or `npm run prepare`
 
 that's it, husky is now succesfully installed with a pre-commit that will check linting everytime you commit.
