@@ -2,7 +2,7 @@
   "name": "RNCodePush-template",
   "version": "0.0.1",
   "description": "React Native CodePush Template",
-  "repository": "",
+  "repository": "https://github.com/SMKH-PRO/ReactNative_CodePush_Template.git",
   "author": "Kashaan Haider <smkh.kashan@gmail.com>",
   "license": "MIT"
 }
