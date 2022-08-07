@@ -1,4 +1,5 @@
-# STEPS TO FOLLOW
+
+## DESCRIPTION
 
 A React Native Template/Boilerplate containing the best practices and scalable design with cutting edge technologies like CodePush/Sentry and all other neccessary libraries pre-configured and basic helper functions and components to help you save your time and make your App super fast.
 
@@ -9,6 +10,9 @@ Command:<br/>
 ```
 npx react-native init AppName --template https://github.com/SMKH-PRO/ReactNative_CodePush_Template.git
 ```
+
+# STEPS TO FOLLOW
+
 
 ## 1. Install dependencies
 
@@ -278,4 +282,5 @@ This repo is open for open-source contributions!
 
 
 <br/>
-<p style="text-align:center">--- END OF DOCS ---</p>
+
+<p align="center" style="text-align:center">--- END OF DOCS ---</p>
