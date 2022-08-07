@@ -251,5 +251,29 @@ Go to `CodePush` dashboard open the app and navigate to `distribute > codepush` 
 
 ![XCODE Staging Scheme screenshot](./docs/assets/images/DeploymentKeys.png "Picture guide for staging release on iOS")
 
+### Change Package.json Scripts.
+
+The package.json file has script to create codepush releases.<br/>
+it may look like this:
+
+```
+"scripts": {
+    "codepush-android-stage": "appcenter codepush release-react -a owner/appName -d Staging -k codePushPrivateKey.pem --sourcemap-output --output-dir ./build",
+    "codepush-android-prod": "appcenter codepush release-react -a owner/Appname -d Production -k codePushPrivateKey.pem --sourcemap-output --output-dir ./build",
+    "codepush-ios-stage": "appcenter codepush release-react -a owner/appName -d Staging -k codePushPrivateKey.pem --sourcemap-output --output-dir ./build",
+    "codepush-ios-prod"
+     ...
+  }
+```
+From all these 4 scripts, you need to replace `owner/appName` with your actual `Owner Name` and `App Name`.
+
+Done.
+
+### MOTIVATON:
+I used to initialize all my react-native projects with this configuration so I thought why not make it a template maybe it may help others save time too!.
+
+This repo is open for open-source contributions!
+
+
 <br/>
 <p style="text-align:center">--- END OF DOCS ---</p>
