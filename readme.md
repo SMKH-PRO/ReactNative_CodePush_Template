@@ -3,6 +3,8 @@
 
 A React Native Template/Boilerplate containing the best practices and scalable design with cutting edge technologies like CodePush/Sentry and all other neccessary libraries pre-configured and basic helper functions and components to help you save your time and make your App super fast.
 
+---
+
 ## INITIALIZE RN WITH THIS TEMPLATE
 
 Command:<br/>
@@ -10,6 +12,8 @@ Command:<br/>
 ```
 npx react-native init AppName --template https://github.com/SMKH-PRO/ReactNative_CodePush_Template.git
 ```
+
+---
 
 # STEPS TO FOLLOW
 
@@ -25,6 +29,7 @@ Commands:<br/>
 1. `cd ios`
 1. `pod install`
 
+---
 ## 2. Prepare Husky
 
 This project is pre-configured with husky, but you've to follow a few steps to enable it for you!
@@ -41,10 +46,13 @@ before going through the following steps, please make sure that the project is i
   }
 ```
 
+---
+
 3. Run the newly added script with command `yarn prepare` or `npm run prepare`
 
 that's it, husky is now succesfully installed with a pre-commit that will check linting everytime you commit.
 
+---
 ## 2. Setup Sentry
 
 Commands:
@@ -60,6 +68,7 @@ Your .env file will look like this:
 SENTRY=https://a13f12a6c6274fd9a22a2759135e5ce5@o1305163.ingest.sentry.io/6629304
 
 ```
+---
 
 # 4. CodePush Setup
 
@@ -81,6 +90,7 @@ openssl genrsa -out codePushPrivateKey.pem
 openssl rsa -pubout -in codePushPrivateKey.pem -out codePushPublicKey.pem
 ```
 
+---
 ### CodePush iOS Setup
 
 **Integrate the SDK in iOS**
@@ -110,6 +120,8 @@ Double click on the `{Your app secret here}` and replace the value with actual a
 
 **Reminder:** You can get the app secret from codepush app's overview page.
 
+---
+
 ### MutliDeployment Integration iOS
 
 Custom build setting has already been configured in iOS but you need to add your deployment keys.
@@ -122,12 +134,15 @@ To set this up, follow these steps:
 
 3. Select the Build Settings tab
 
-4. In `Used-Defined` section, You'll see a setting named "CODEPUSH_KEY" open this setting and write your `staging` deployment key and `Release` deployment key.
+4. In `User-Defined` section, You'll see a setting named "CODEPUSH_KEY" open this setting and write your `staging`and `Release` deployment keys.
 
-![XCODE Build Setting screenshot](./docs/assets/images/AppcenterSecret.png "Picture guide for step #4 ")
+![XCODE Build Setting screenshot](./docs/assets/images/CodePushKey.png "Picture guide for step #4 ")
+
+Replace `DEPLOYMENT_KEY_FOR_PRODUCTION` with your `Production` key, and `DEPLOYMENT_KEY_FOR_STAGING` with your `Staging` key
 
 And that's it! Now when you run or build your app, your staging builds will automatically be configured to sync with your Staging deployment, and your release builds will be configured to sync with your Production deployment.
 
+---
 ### How to create staging release on iOS?<br/>
 
 To create a staging build you can just edit scheme to `Staging`.<br/>
@@ -142,6 +157,7 @@ Scheme Selection:
 
 That's it, Now after selecting `Staging` for `Archive build`, you'll get the staging App when you build archive release.
 
+---
 ### Code Signing For iOS
 
 In order to configure Public Key for bundle verification you need to edit record in Info.plist with name CodePushPublicKey and string value of public key content.<br/>
@@ -168,6 +184,7 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANkWYydPuyOumR/sn2agNBVDnzyRpM16NAUpYPGxNgjSEp0e
 **Picture Guide For Editing Public Key:**
 ![XCODE info.plist screenshot](./docs/assets/images/PublicKey.png "Picture guide for editing public key iOS")
 
+---
 ### CodePush Android Setup
 
 **Integrate the SDK in Android**<br>
@@ -181,6 +198,8 @@ Open file with the filename `appcenter-config.json` in `android/app/src/main/ass
 ```
 
 Replace `{Your app secret here}` with your actual app secret.
+
+---
 
 ### MutliDeployment Integration Android
 
@@ -217,6 +236,8 @@ and Replace `<INSERT_PRODUCTION_KEY>` with your deployment key for `Production`.
 
 That's it, No need to change anything else in this file.
 
+---
+
 ### How to create staging release on Android?<br/>
 
 To build an staging apk, the command for that will be 
@@ -225,6 +246,7 @@ cd android && ./gradlew assembleReleaseStaging
 ```
  and you'll find the output on `android/app/build/outputs/apk/releaseStaging`
 
+---
 ### Code Signing For Android
 
 Edit `CodePushPublicKey` string item in `/path_to_your_app/android/app/src/main/res/values/strings.xml` file, It may looks like this:
@@ -247,6 +269,8 @@ zwIDAQAB
 Replace the previous `PUBLIC KEY` with your own.
 <br/>
 
+---
+
 ### How to get CodePush deployment keys?<br/>
 
 As a reminder, you can retrieve deployment keys by running command `appcenter codepush deployment list -a <ownerName>/<appName> -k` from your terminal <br/>
@@ -257,6 +281,7 @@ Go to `CodePush` dashboard open the app and navigate to `distribute > codepush` 
 
 ![XCODE Staging Scheme screenshot](./docs/assets/images/DeploymentKeys.png "Picture guide for staging release on iOS")
 
+---
 ### Change Package.json Scripts.
 
 The package.json file has script to create codepush releases.<br/>
@@ -275,12 +300,16 @@ From all these 4 scripts, you need to replace `owner/appName` with your actual `
 
 Done.
 
+---
+
+
 ### MOTIVATON:
 I used to initialize all my react-native projects with this configuration so I thought why not make it a template maybe it may help others save time too!.
 
 This repo is open for open-source contributions!
 
+<BR/>
 
-<br/>
+---
 
 <p align="center" style="text-align:center">--- END OF DOCS ---</p>
