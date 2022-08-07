@@ -276,4 +276,5 @@ This repo is open for open-source contributions!
 
 
 <br/>
-<p style="text-align:center">--- END OF DOCS ---</p>
+
+<p align="center" style="text-align:center">--- END OF DOCS ---</p>
