@@ -44,7 +44,9 @@ that's it, husky is now succesfully installed with a pre-commit that will check 
 ## 2. Setup Sentry
 
 Commands:
+```
 npx @sentry/wizard -i reactNative -p ios android
+```
 
 modify the SENTRY URL from .env file (if .env does not exist, make one with "SENTRY" variable).
 
