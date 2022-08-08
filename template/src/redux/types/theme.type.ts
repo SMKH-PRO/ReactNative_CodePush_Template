@@ -36,7 +36,14 @@ export type DarkModePayload = {
   dark: boolean;
 };
 
-type PossibleTypes = ThemeReducer.DARK_MODE | ThemeReducer.SET_THEME;
+export type SwitchDarkModeAction = {
+  type: ThemeReducer.DARK_MODE;
+  payload: DarkModePayload;
+};
 
-export type PossiblePayloads = DarkModePayload | ThemeState;
-export type Action = { type: PossibleTypes; payload: PossiblePayloads };
+export type SetThemeAction = {
+  type: ThemeReducer.SET_THEME;
+  payload: ThemeState;
+};
+
+export type Action = SwitchDarkModeAction | SetThemeAction;

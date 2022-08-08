@@ -33,7 +33,9 @@ const routingInstrumentation = new Sentry.ReactNavigationInstrumentation();
 if (!IS_DEV) {
   codePush
     .getUpdateMetadata()
+    // eslint-disable-next-line promise/prefer-await-to-then
     .then(update => {
+      // eslint-disable-next-line promise/always-return
       if (update) {
         Sentry.init({
           dsn: 'https://a13f12a6c6274fd9a22a2759135e5ce5@o1305163.ingest.sentry.io/6629304',
@@ -50,6 +52,7 @@ if (!IS_DEV) {
         });
       }
     })
+    // eslint-disable-next-line promise/prefer-await-to-then
     .catch(devLog.error);
 }
 

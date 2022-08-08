@@ -3,10 +3,8 @@ import { NavigationContainer, Theme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { useColorScheme } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
 import { ReactNavigationInstrumentation } from '@sentry/react-native';
 import { setTheme } from '../redux/actions/theme';
-import type { ThemeState } from '../redux/types/theme.type';
 import navigationList, {
   deepLinking,
 } from '../utils/constants/navigationList.constants';
@@ -14,8 +12,9 @@ import type { RootStackParamList } from '../utils/types/navigation.types';
 import { hideSplash, shouldRenderNav } from '../utils/helpers';
 import { defaultTheme } from '../utils/constants/theme.constants';
 
-import { RootState } from '../redux';
 import LoadingBlankScreen from '../components/common/LoadingBlankScreen/index';
+import useDispatch from '../hooks/useDispatch';
+import useSelector from '../hooks/useSelector';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 type NavigationProps = {
@@ -24,8 +23,8 @@ type NavigationProps = {
 
 const Navigation = ({ routingInstrumentation }: NavigationProps) => {
   const navigation = useRef(null);
-  const theme = useSelector((state: { theme: ThemeState }) => state.theme);
-  const user = useSelector((state: RootState) => state.user.data);
+  const theme = useSelector(state => state?.theme);
+  const user = useSelector(state => state?.user?.data);
 
   const dispatch = useDispatch();
   const scheme = useColorScheme();
