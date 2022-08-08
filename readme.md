@@ -224,9 +224,39 @@ That's it, No need to change anything else in this file.
 
 To build an staging apk, the command for that will be 
 ```
-cd android && ./gradlew assembleReleaseStaging
+cd android && ./gradlew assembleStagingRelease
 ```
- and you'll find the output on `android/app/build/outputs/apk/releaseStaging`
+
+ and you'll find the output on `android/app/build/outputs/apk/staging`
+<br/>
+
+**For Production Build**
+```
+cd android && ./gradlew assembleProductionRelease
+```
+
+**OR**
+
+```
+// It will create the Apk for both, production and staging.
+
+cd android && ./gradlew assembleRelease
+
+```
+**Same goes for Bundle Release**
+
+```
+// For Production
+cd android && ./gradlew bundleProductionRelease
+
+// For Staging
+cd android && ./gradlew bundleStagingRelease
+
+// Will generate bundle for Production & Staging, Both.
+cd android && ./gradlew assembleRelease
+
+```
+
 
 ---
 ### Code Signing For Android
