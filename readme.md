@@ -236,7 +236,7 @@ cd android && ./gradlew assembleStagingRelease
 ```
 cd android && ./gradlew assembleProductionRelease
 ```
-
+ and you'll find the output on `android/app/build/outputs/apk/production`
 **OR**
 
 ```
@@ -245,6 +245,8 @@ cd android && ./gradlew assembleProductionRelease
 cd android && ./gradlew assembleRelease
 
 ```
+ and you'll find the output on `android/app/build/outputs/apk/staging` and `android/app/build/outputs/apk/production` both.
+ 
 **Same goes for Bundle Release**
 
 ```
