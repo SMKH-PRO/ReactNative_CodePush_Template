@@ -120,7 +120,7 @@ Double click on the `{Your app secret here}` and replace the value with actual a
 
 ---
 
-### MutliDeployment Integration iOS
+### MutliDeployment Configuration iOS
 
 Custom build setting has already been configured in iOS but you need to add your deployment keys.
 
@@ -199,7 +199,7 @@ Replace `{Your app secret here}` with your actual app secret.
 
 ---
 
-### MutliDeployment Integration Android
+### MutliDeployment Configuration Android
 
 1. Open the project's app level `build.gradle` file (for example `android/app/build.gradle` in standard React Native projects)
 
