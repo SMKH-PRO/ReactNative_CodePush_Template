@@ -205,7 +205,7 @@ Replace `{Your app secret here}` with your actual app secret.
 
 2. Find the android `{ productFlavors {} }` section and edit `resValue` entries for both your `Staging` and `Production` build variants also replace AppName strings with your actual App Display Name.
 
-If you're in the correct gradle file, The buildTypes section will look like this:
+If you're in the correct gradle file, It will look like this:
 
 ![XCODE android build.gradle screenshot](./docs/assets/images/change_environment.png "Picture guide for editing public key iOS")
 
