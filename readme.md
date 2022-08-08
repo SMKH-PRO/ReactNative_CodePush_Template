@@ -222,6 +222,8 @@ That's it, No need to change anything else in this file.
 
 ### How to create staging release on Android?<br/>
 
+Note: the following commands assume that you're not already in the `Android` folder, if you're already inside project's android folder just ignore the `cd android &&` part of the commands.
+
 To build an staging apk, the command for that will be 
 ```
 cd android && ./gradlew assembleStagingRelease
