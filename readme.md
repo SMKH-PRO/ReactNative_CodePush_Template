@@ -203,34 +203,18 @@ Replace `{Your app secret here}` with your actual app secret.
 
 1. Open the project's app level `build.gradle` file (for example `android/app/build.gradle` in standard React Native projects)
 
-2. Find the android `{ buildTypes {} }` section and edit `resValue` entries for both your `Staging` and `Release` build types, which reference your `Staging` and `Production` deployment keys respectively.
+2. Find the android `{ productFlavors {} }` section and edit `resValue` entries for both your `Staging` and `Production` build variants also replace AppName strings with your actual App Display Name.
 
 If you're in the correct gradle file, The buildTypes section will look like this:
 
-```
-android {
-    ...
-    buildTypes {
-        debug {
+![XCODE android build.gradle screenshot](./docs/assets/images/change_environment.png "Picture guide for editing public key iOS")
 
-          resValue "string", "CodePushDeploymentKey", ""
-        }
-        releaseStaging {
-
-          resValue "string", "CodePushDeploymentKey", "<INSERT_STAGING_KEY>"
-        }
-        release {
-
-          resValue "string", "CodePushDeploymentKey", "<INSERT_PRODUCTION_KEY>"
-        }
-    }
-    ...
-}
-```
 
 From this file replace `<INSERT_STAGING_KEY>` with your own Deployment key for `Staging`.<br/>
 
 and Replace `<INSERT_PRODUCTION_KEY>` with your deployment key for `Production`.<br/>
+
+and Replace `appName` with your actual App Display Name.<br/>
 
 That's it, No need to change anything else in this file.
 

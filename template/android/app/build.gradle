@@ -231,24 +231,13 @@ android {
     buildTypes {
         debug {
             resValue "string", "CodePushDeploymentKey", ""
+            
+            resValue "string", "app_name", "Debug appName"
 
             signingConfig signingConfigs.debug
         }
 
-        releaseStaging {
-            resValue "string", "CodePushDeploymentKey", "<INSERT_STAGING_KEY>"
-
-            // Caution! In production, you need to generate your own keystore file.
-            // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-                        matchingFallbacks = ['release']
-
-        }
         release {
-            resValue "string", "CodePushDeploymentKey", "<INSERT_PRODUCTION_KEY>"
-
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
@@ -256,7 +245,22 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    flavorDimensions "environment"
+    productFlavors {
 
+        staging {
+            resValue "string", "CodePushDeploymentKey", "<INSERT_STAGING_KEY>"
+            resValue "string", "app_name", "Stage appName"
+
+        }
+
+        production {
+            resValue "string", "CodePushDeploymentKey", "<INSERT_PRODUCTION_KEY>"
+            resValue "string", "app_name", "appName"
+        }
+
+       
+    }
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
