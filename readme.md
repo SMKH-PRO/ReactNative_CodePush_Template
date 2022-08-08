@@ -236,8 +236,8 @@ cd android && ./gradlew assembleStagingRelease
 ```
 cd android && ./gradlew assembleProductionRelease
 ```
- and you'll find the output on `android/app/build/outputs/apk/production`<br/>
-**OR**
+ and you'll find the output on `android/app/build/outputs/apk/production`<br/><br/>
+**OR BUILD BOTH**
 
 ```
 // It will create the Apk for both, production and staging.
