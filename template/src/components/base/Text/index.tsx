@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   TextProps as RealTextProps,
   Text as RealText,
   TextStyle,
+  StyleSheet,
 } from 'react-native';
 import useTheme from '../../../hooks/useTheme';
 
@@ -26,6 +27,9 @@ const Text = ({
   ...props
 }: TextProps) => {
   const theme = useTheme();
+
+  const styleProp = useMemo(() => StyleSheet.flatten(style), [style]);
+
   return (
     <RealText
       style={[
@@ -38,7 +42,7 @@ const Text = ({
           ...(color ? { color } : {}),
           ...(letterSpacing ? { letterSpacing } : {}),
         },
-        style,
+        styleProp,
       ]}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}>

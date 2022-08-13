@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   View,
   Pressable,
@@ -7,6 +7,8 @@ import {
   PressableProps,
   ViewStyle,
   ActivityIndicator,
+  StyleProp,
+  StyleSheet,
 } from 'react-native';
 import { IS_APPLE } from '../../../utils/constants';
 import { devLog } from '../../../utils/helpers';
@@ -15,11 +17,11 @@ import useTheme from '../../../hooks/useTheme';
 
 interface ButtonProps extends PressableProps {
   title: string;
-  titleStyle?: TextStyle;
+  titleStyle?: StyleProp<TextStyle>;
   activeOpacity?: number;
   style?: ViewStyle;
-  styleOnPress?: ViewStyle;
-  styleOnLeave?: ViewStyle;
+  styleOnPress?: StyleProp<ViewStyle>;
+  styleOnLeave?: StyleProp<ViewStyle>;
   loading?: boolean;
   onPress?: PressableProps['onPress'];
   shadow?: boolean;
@@ -72,6 +74,17 @@ const Button = (props: ButtonProps) => {
   const containedTxtColor = textColor || theme?.colors?.textOnPrimaryBg;
 
   const txtColor = variant === 'text' ? textTxtColor : containedTxtColor;
+
+  const styleProp = useMemo(() => StyleSheet.flatten(style), [style]);
+  const styleOnPressProp = useMemo(
+    () => StyleSheet.flatten(styleOnPress),
+    [styleOnPress],
+  );
+  const styleOnLeaveProp = useMemo(
+    () => StyleSheet.flatten(styleOnLeave),
+    [styleOnLeave],
+  );
+
   return (
     <Pressable
       // eslint-disable-next-line react/jsx-props-no-spreading
@@ -84,9 +97,9 @@ const Button = (props: ButtonProps) => {
         opacity: pressed ? onPressOpacity : 1,
         ...styles.button,
         ...(!loading ? { padding: 15 } : { padding: 13.5 }),
-        ...(pressed ? styleOnPress : styleOnLeave),
+        ...(pressed ? styleOnPressProp : styleOnLeaveProp),
         ...(shadow ? styles.shadowStyle : {}),
-        ...style,
+        ...styleProp,
       })}>
       {loading && (
         <View style={styles.loading}>

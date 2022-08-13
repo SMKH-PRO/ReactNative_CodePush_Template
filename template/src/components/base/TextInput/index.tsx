@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
@@ -9,6 +9,8 @@ import {
   TextStyle,
   ViewStyle,
   TouchableOpacity,
+  StyleProp,
+  StyleSheet,
 } from 'react-native';
 import styles from './index.styles';
 import { devLog } from '../../../utils/helpers';
@@ -17,10 +19,10 @@ import useTheme from '../../../hooks/useTheme';
 export interface TextInputProps extends InputProps {
   label?: string;
   value?: string;
-  style?: ViewStyle;
-  containerStyle?: ViewStyle;
-  labelContainerStyle?: ViewStyle;
-  labelStyle?: TextStyle;
+  style?: StyleProp<ViewStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
+  labelStyle?: StyleProp<TextStyle>;
+  rightContainerStyle?: StyleProp<ViewStyle>;
   inputStyle?: InputProps['style'];
   fontSizeBeforeFocus?: number;
   fontSizeAfterFocus?: number;
@@ -31,7 +33,6 @@ export interface TextInputProps extends InputProps {
   colorAfterFocus?: string;
   multiline?: boolean;
   secureTextEntry?: boolean;
-  leftContainerStyle?: ViewStyle;
   right?: JSX.Element;
   left?: JSX.Element;
   height?: number;
@@ -48,7 +49,7 @@ const TextInput = (props: TextInputProps) => {
     right,
     style,
     containerStyle,
-    leftContainerStyle,
+    rightContainerStyle,
     labelStyle,
     animationDuration,
     colorBeforeFocus,
@@ -101,10 +102,35 @@ const TextInput = (props: TextInputProps) => {
 
   const hasLeft = Boolean(left);
   const hasRight = Boolean(right);
+
+  // containerStyle?: StyleProp<ViewStyle>;
+  // labelStyle?: StyleProp<TextStyle>;
+  // rightContainerStyle?: StyleProp<ViewStyle>;
+  // inputStyle?: InputProps['style'];
+
+  const styleProp = useMemo(() => StyleSheet.flatten(style), [style]);
+
+  const containerStyleProp = useMemo(
+    () => StyleSheet.flatten(containerStyle),
+    [containerStyle],
+  );
+
+  const labelStyleProp = useMemo(
+    () => StyleSheet.flatten(labelStyle),
+    [labelStyle],
+  );
+  const leftContainerStyleProp = useMemo(
+    () => StyleSheet.flatten(rightContainerStyle),
+    [rightContainerStyle],
+  );
+  const inputStyleProp = useMemo(
+    () => StyleSheet.flatten(inputStyle),
+    [inputStyle],
+  );
   return (
-    <View style={[styles.containerStyle, containerStyle, style]}>
+    <View style={[styles.containerStyle, containerStyleProp, styleProp]}>
       {hasLeft && (
-        <View style={[styles.leftContainerStyle, leftContainerStyle]}>
+        <View style={[styles.leftContainerStyle, leftContainerStyleProp]}>
           {left}
         </View>
       )}
@@ -117,7 +143,7 @@ const TextInput = (props: TextInputProps) => {
               styles.labelStyle,
               // eslint-disable-next-line react-native/no-inline-styles
               { left: hasLeft ? 0 : 10 },
-              labelStyle,
+              labelStyleProp,
               {
                 // transform: [{ translateY: top }],
 
@@ -138,7 +164,7 @@ const TextInput = (props: TextInputProps) => {
               color: theme?.colors?.text,
               ...(multiline ? {} : { maxHeight: height || 50 }),
             },
-            inputStyle,
+            inputStyleProp,
           ]}
           onChange={e => typeof onChange === 'function' && onChange(e)}
           onChangeText={txt =>
@@ -156,12 +182,12 @@ const TextInput = (props: TextInputProps) => {
       </View>
       {!secureTextEntry ? (
         hasRight && (
-          <View style={[styles.leftContainerStyle, leftContainerStyle]}>
+          <View style={[styles.leftContainerStyle, leftContainerStyleProp]}>
             {right}
           </View>
         )
       ) : (
-        <View style={[styles.leftContainerShow, leftContainerStyle]}>
+        <View style={[styles.leftContainerShow, leftContainerStyleProp]}>
           <TouchableOpacity onPress={() => setShowPass(!showPass)}>
             <Icon
               size={20}
@@ -186,7 +212,6 @@ TextInput.defaultProps = {
 
   style: null,
   containerStyle: null,
-  labelContainerStyle: null,
   labelStyle: null,
   inputStyle: null,
   fontSizeBeforeFocus: 16,
@@ -197,7 +222,7 @@ TextInput.defaultProps = {
   colorBeforeFocus: '#aaa',
   colorAfterFocus: null,
   multiline: false,
-  leftContainerStyle: null,
+  rightContainerStyle: null,
   right: null,
   left: null,
   height: null,

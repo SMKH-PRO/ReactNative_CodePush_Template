@@ -1,9 +1,11 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import {
   Pressable,
   PressableProps,
   ViewStyle,
   ActivityIndicator,
+  StyleProp,
+  StyleSheet,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { devLog } from '../../../utils/helpers';
@@ -13,9 +15,9 @@ import useTheme from '../../../hooks/useTheme';
 export interface IconButtonProps extends PressableProps {
   name?: string;
   activeOpacity?: number;
-  style?: ViewStyle;
-  styleOnPress?: ViewStyle;
-  styleOnLeave?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
+  styleOnPress?: StyleProp<ViewStyle>;
+  styleOnLeave?: StyleProp<ViewStyle>;
   loading?: boolean;
   onPress?: PressableProps['onPress'];
   round?: boolean;
@@ -64,6 +66,16 @@ const IconButton = (props: IconButtonProps) => {
       : theme?.colors?.backgroundLite;
 
   const backgroundColor = noBg ? 'transparent' : bgColor;
+
+  const styleProp = useMemo(() => StyleSheet.flatten(style), [style]);
+  const styleOnPressProp = useMemo(
+    () => StyleSheet.flatten(styleOnPress),
+    [styleOnPress],
+  );
+  const styleOnLeaveProp = useMemo(
+    () => StyleSheet.flatten(styleOnLeave),
+    [styleOnLeave],
+  );
   return (
     <Pressable
       // eslint-disable-next-line react/jsx-props-no-spreading
@@ -77,8 +89,8 @@ const IconButton = (props: IconButtonProps) => {
         ...styles.button,
         ...(noShadow ? {} : styles.shadowStyle),
         ...(round ? styles.round : {}),
-        ...style,
-        ...(pressed ? styleOnPress : styleOnLeave),
+        ...styleProp,
+        ...(pressed ? styleOnPressProp : styleOnLeaveProp),
       })}>
       {loading ? <ActivityIndicator color={loadingColor} /> : FinalIcon}
     </Pressable>
