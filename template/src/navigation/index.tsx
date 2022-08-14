@@ -12,7 +12,7 @@ import type { RootStackParamList } from '../utils/types/navigation.types';
 import { hideSplash, shouldRenderNav } from '../utils/helpers';
 import { defaultTheme } from '../utils/constants/theme.constants';
 
-import LoadingBlankScreen from '../components/common/LoadingBlankScreen/index';
+import LoadingFullScreen from '../components/common/LoadingFullScreen/index';
 import useDispatch from '../hooks/useDispatch';
 import useSelector from '../hooks/useSelector';
 
@@ -60,7 +60,7 @@ const Navigation = ({ routingInstrumentation }: NavigationProps) => {
   return (
     <NavigationContainer
       linking={deepLinking}
-      fallback={<LoadingBlankScreen />}
+      fallback={<LoadingFullScreen />}
       onReady={() => {
         // Register the navigation container with the instrumentation
         if (routingInstrumentation)

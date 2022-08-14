@@ -3,7 +3,7 @@ import { ActivityIndicator, View } from 'react-native';
 import styles from './index.styles';
 import useTheme from '../../../hooks/useTheme';
 
-const LoadingBlankScreen = () => {
+const LoadingFullScreen = () => {
   const theme = useTheme();
   return (
     <View style={styles.container}>
@@ -12,4 +12,4 @@ const LoadingBlankScreen = () => {
   );
 };
 
-export default LoadingBlankScreen;
+export default LoadingFullScreen;
