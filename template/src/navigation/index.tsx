@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { NavigationContainer, Theme } from '@react-navigation/native';
+import { NavigationContainer, Theme, useNavigationContainerRef } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { useColorScheme } from 'react-native';
@@ -22,7 +22,7 @@ type NavigationProps = {
 };
 
 const Navigation = ({ routingInstrumentation }: NavigationProps) => {
-  const navigation = useRef(null);
+  const navigation = useNavigationContainerRef();
   const theme = useSelector(state => state?.theme);
   const user = useSelector(state => state?.user?.data);
 
