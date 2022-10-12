@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/default-param-last */
-import { Reducer } from 'redux';
+import { Reducer } from '@reduxjs/toolkit';
 import { defaultTheme } from '../../utils/constants/theme.constants';
 import { ThemeReducer } from '../../utils/enums/reducers.enums';
 import type { Action } from '../types/theme.type';

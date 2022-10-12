@@ -1,5 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import { NavigationContainer, Theme, useNavigationContainerRef } from '@react-navigation/native';
+import React, { useEffect } from 'react';
+import {
+  NavigationContainer,
+  Theme,
+  useNavigationContainerRef,
+} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { useColorScheme } from 'react-native';

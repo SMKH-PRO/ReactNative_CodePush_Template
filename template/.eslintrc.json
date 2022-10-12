@@ -46,7 +46,6 @@
     "promise/always-return": "warn",
     "react/jsx-uses-react": 1,
     "@typescript-eslint/no-unused-vars": "error",
-    "react-native/no-unused-styles": ["error", { "enableImportsCheck": true }],
     "react/function-component-definition": [
       2,
       {
