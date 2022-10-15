@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import Button from '../../components/base/Button';
 import Divider from '../../components/base/Divider';
 import IconButton from '../../components/base/IconButton';
@@ -10,6 +11,7 @@ import styles from './index.styles';
 
 const Home = () => {
   const [text, setText] = useState<string>('');
+  const { t } = useTranslation();
 
   return (
     <Container>
@@ -24,6 +26,9 @@ const Home = () => {
       </View>
 
       <TextInput value={text} onChangeText={setText} />
+
+      <Text>{t('greetings.helloUser', { name: 'KASHAN ' })}</Text>
+      <Text>{t('welcome')}</Text>
     </Container>
   );
 };
