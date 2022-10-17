@@ -19,7 +19,7 @@ interface ButtonProps extends PressableProps {
   title: string;
   titleStyle?: StyleProp<TextStyle>;
   activeOpacity?: number;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   styleOnPress?: StyleProp<ViewStyle>;
   styleOnLeave?: StyleProp<ViewStyle>;
   loading?: boolean;
