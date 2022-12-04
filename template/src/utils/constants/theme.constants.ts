@@ -1,5 +1,5 @@
 import { DefaultTheme } from '@react-navigation/native';
-import { ThemeState } from '../../redux/types/theme.type';
+import { ThemeState } from '../types/redux/theme.types';
 import { wp } from '../helpers/responsive.helpers';
 
 const shadow = {

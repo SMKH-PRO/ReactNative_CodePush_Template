@@ -3,7 +3,7 @@ import {
   SwitchDarkModeAction,
   SetThemeAction,
   ThemeState,
-} from '../types/theme.type';
+} from '../../utils/types/redux/theme.types';
 
 const switchDarkMode = (bool: boolean): SwitchDarkModeAction => ({
   type: ThemeReducer.DARK_MODE,

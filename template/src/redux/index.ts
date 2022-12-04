@@ -19,10 +19,12 @@ import {
 import { IS_DEV } from '../utils/constants';
 import theme from './reducers/theme';
 import user from './reducers/user';
+import appConfig from './reducers/appConfig';
 
 const reducers = combineReducers({
   user,
   theme,
+  appConfig,
 });
 
 const persistConfig = {

@@ -7,4 +7,8 @@ enum ThemeReducer {
   SET_THEME = 'SET_THEME',
 }
 
-export { UserReducer, ThemeReducer };
+enum AppConfigReducer {
+  SET_LANG = 'SET_LANG',
+}
+
+export { UserReducer, ThemeReducer, AppConfigReducer };

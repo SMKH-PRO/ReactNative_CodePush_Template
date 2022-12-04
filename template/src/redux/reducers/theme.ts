@@ -2,7 +2,7 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { defaultTheme } from '../../utils/constants/theme.constants';
 import { ThemeReducer } from '../../utils/enums/reducers.enums';
-import type { Action } from '../types/theme.type';
+import type { Action } from '../../utils/types/redux/theme.types';
 
 const themeReducer: Reducer<typeof defaultTheme, Action> = (
   state = defaultTheme || {},
