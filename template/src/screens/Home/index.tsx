@@ -93,7 +93,7 @@ const Home = () => {
       </Text>
       <Text>
         {'\n\n'}
-        Others Environments:{' '}
+        Others Environment Variables:{' '}
         <Text style={{ color: theme?.colors?.primary }}>
           {JSON.stringify(ENVIRONMENTS)}
         </Text>
