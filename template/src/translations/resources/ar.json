@@ -1,8 +1,9 @@
 {
-  "welcome": "مرحبًا بك في My Alfred",
+  "welcome": "مرحبًا بك في MyApp",
   "greetings": {
     "helloUser": "أهلاً {{name}}"
   },
-
-  "changeLangBtn": "تغيير اللغة"
+  "changeLangBtn": "{{lang}} تغيير اللغة إلى ",
+  "square": "ميدان",
+  "round": "دائري"
 }

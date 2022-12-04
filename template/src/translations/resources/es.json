@@ -1,0 +1,9 @@
+{
+  "welcome": "Bienvenido a MyApp",
+  "greetings": {
+    "helloUser": "Hola {{name}}"
+  },
+  "changeLangBtn": "Cambiar idioma a {{lang}}",
+  "round": "Redonda",
+  "square": "Cuadrada"
+}

@@ -3,5 +3,7 @@
   "greetings": {
     "helloUser": "Hi {{name}}"
   },
-  "changeLangBtn": "Change Language"
+  "changeLangBtn": "Change Language to {{lang}}",
+  "square": "square",
+  "round": "Round"
 }
