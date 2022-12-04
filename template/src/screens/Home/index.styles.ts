@@ -5,6 +5,9 @@ const styles = StyleSheet.create({
   cont: { margin: 30, alignSelf: 'center', width: '100%' },
   row: { flexDirection: 'row', alignItems: 'center' },
   notUsed: { color: 'blue' },
+  env: {
+    fontWeight: 'bold',
+  },
 });
 
 export default styles;

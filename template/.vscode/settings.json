@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    ".env.development": "env",
+    ".env.production": "env",
+    ".env.staging": "env",
+    ".env.uat": "env"
+  }
+}

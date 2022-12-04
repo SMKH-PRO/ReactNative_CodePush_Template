@@ -245,13 +245,17 @@ android {
             resValue "string", "app_name", "Debug appName"
         }
 
-        staging {
+        stage {
             resValue "string", "CodePushDeploymentKey", "<INSERT_STAGING_KEY>"
             resValue "string", "app_name", "Stage appName"
 
         }
+        uat {
+            resValue "string", "CodePushDeploymentKey", "<INSERT_UAT_KEY>"
+            resValue "string", "app_name", "Test appName"
 
-        production {
+         }
+        prod {
             resValue "string", "CodePushDeploymentKey", "<INSERT_PRODUCTION_KEY>"
             resValue "string", "app_name", "appName"
         }
@@ -345,3 +349,15 @@ project.ext.vectoricons = [
 ]
 
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+apply plugin: "com.android.application"
+project.ext.envConfigFiles = [
+   proddebug: ".env.production",
+   prodrelease: ".env.production",
+   devrelease: ".env.development",
+   devdebug: ".env.development",
+   stagerelease: ".env.staging",
+   stagedebug: ".env.staging",
+   uatrelease: ".env.uat",
+   uatdebug: ".env.uat"
+]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle" 
