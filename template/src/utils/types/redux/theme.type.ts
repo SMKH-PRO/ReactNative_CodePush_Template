@@ -1,4 +1,4 @@
-import { ThemeReducer } from '../../utils/enums/reducers.enums';
+import { ThemeReducer } from '../../enums/reducers.enums';
 
 type Shadow = {
   shadowColor: string;

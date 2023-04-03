@@ -1,4 +1,4 @@
-import { UserReducer } from '../../utils/enums/reducers.enums';
+import { UserReducer } from '../../enums/reducers.enums';
 
 export type User = {
   expiration: string;
