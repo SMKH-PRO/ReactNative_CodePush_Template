@@ -1,19 +1,18 @@
 import { StyleSheet } from 'react-native';
-import { IS_TABLET } from '../../../utils/constants';
+import { wp } from '../../../utils/helpers/responsive.helpers';
 
 const styles = StyleSheet.create({
   button: {
-    fontFamily: 'Manrope',
     marginVertical: 10,
-    borderRadius: 4,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    ...(IS_TABLET ? { height: 61 } : {}),
+    borderRadius: wp('2%', 10),
+    minHeight: 35,
   },
   label: {
     color: 'white',
-    ...(IS_TABLET ? { fontSize: 19 } : { fontSize: 16 }),
+    // fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -21,16 +20,17 @@ const styles = StyleSheet.create({
     marginRight: 15,
     marginLeft: -35,
   },
-  shadowStyle: {
-    shadowColor: '#000',
+
+  shadow: {
+    shadowColor: 'rgba(0,0,0,0.7)',
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 2,
     },
-    shadowOpacity: 0.29,
-    shadowRadius: 4.65,
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
 
-    elevation: 7,
+    elevation: wp('0.8%'),
   },
 });
 

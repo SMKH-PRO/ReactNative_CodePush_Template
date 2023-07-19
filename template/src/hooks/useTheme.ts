@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { ThemeState } from '../redux/types/theme.type';
+import { ThemeState } from '../utils/types/redux/theme.type';
 
 const useTheme = () => {
   const theme: ThemeState = useSelector(

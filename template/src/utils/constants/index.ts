@@ -9,6 +9,7 @@ const IS_DEV = __DEV__;
 
 const IS_APPLE = Platform.OS === 'ios';
 const IS_ANDROID = Platform.OS === 'android';
+const VERY_SMALL_DEVICE = WINDOW_WIDTH < 350;
 
 export {
   IS_DEV,
@@ -18,4 +19,5 @@ export {
   SCREEN_WIDTH,
   SCREEN_HEIGHT,
   WINDOW_HEIGHT,
+  VERY_SMALL_DEVICE,
 };

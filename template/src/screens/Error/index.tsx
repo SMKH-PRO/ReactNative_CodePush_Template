@@ -12,8 +12,10 @@ import { hideSplash } from '../../utils/helpers';
 type ComponentT = React.ComponentType<FallbackProps>;
 
 const ErrorScreen: ComponentT = (props: FallbackProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { error, resetErrorBoundary } = props;
-
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+  const errorMsg = error?.message?.toString?.();
   const hideSplashScreen = async () => {
     await hideSplash();
   };
@@ -31,11 +33,7 @@ const ErrorScreen: ComponentT = (props: FallbackProps) => {
         source={require('../../assets/animations/404.json')}
         style={{ height: Dimensions.get('window').height / 2 }}
       />
-      {!!error && (
-        <Text style={styles.errText}>
-          Error: {error?.message?.toString?.()}
-        </Text>
-      )}
+      {!!error && <Text style={styles.errText}>Error: {errorMsg}</Text>}
       <View style={styles.resetBtnCont}>
         <Button
           title="Try Again!"

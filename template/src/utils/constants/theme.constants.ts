@@ -1,6 +1,6 @@
 import { DefaultTheme } from '@react-navigation/native';
-import { ThemeState } from '../../redux/types/theme.type';
 import { wp } from '../helpers/responsive.helpers';
+import { ThemeState } from '../types/redux/theme.type';
 
 const shadow = {
   shadowColor: '#000',

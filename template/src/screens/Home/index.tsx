@@ -18,6 +18,9 @@ const arabic = 'ar';
 const english = 'en';
 const spanish = 'es';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+const restartNow = () => RNRestart.Restart();
+
 const Home = () => {
   const [text, setText] = useState<string>('');
   const theme = useTheme();
@@ -31,10 +34,10 @@ const Home = () => {
       setTimeout(() => {
         if (langsRTL.includes(newLang) && !I18nManager.isRTL) {
           I18nManager.forceRTL(true);
-          RNRestart.Restart();
+          restartNow();
         } else if (I18nManager.isRTL) {
           I18nManager.forceRTL(false);
-          RNRestart.Restart();
+          restartNow();
         }
       }, 1000);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
