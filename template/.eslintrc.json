@@ -6,7 +6,7 @@
   },
   "extends": [
     "plugin:react/recommended",
-    "@react-native-community",
+    "@react-native",
     "airbnb",
     "airbnb-typescript",
     "airbnb/hooks",
@@ -25,7 +25,7 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "ecmaFeatures": {
+    "ecmaFeatures": { 
       "jsx": true
     },
     "ecmaVersion": "latest",
