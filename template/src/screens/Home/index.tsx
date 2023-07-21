@@ -13,6 +13,9 @@ import { devLog } from '../../utils/helpers';
 import useTheme from '../../hooks/useTheme';
 import showMessage from '../../configs/showMessage';
 import ENVIRONMENTS from '../../configs/environments';
+import { setTheme } from '../../redux/theme';
+import useDispatch from '../../hooks/useDispatch';
+import { defaultTheme } from '../../utils/constants/theme.constants';
 
 const arabic = 'ar';
 const english = 'en';
@@ -25,6 +28,7 @@ const Home = () => {
   const [text, setText] = useState<string>('');
   const theme = useTheme();
   const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
   const lang = i18n?.language;
 
   const changeLanguage = async (newLang: string) => {
@@ -53,20 +57,31 @@ const Home = () => {
 
   const toggleSpanish = () =>
     changeLanguage(lang === spanish ? english : spanish);
+
   const toggleArabic = () => changeLanguage(lang === arabic ? english : arabic);
 
   return (
     <Container>
       <Text style={styles.title}>Home {'\n\n'}</Text>
       <Text>IconButton:{'\n'}</Text>
-      <View style={styles.row}>
+      <View style={{ ...styles.row, backgroundColor: theme.colors.background }}>
         <Text fontSize={17}> {t('round')}: </Text>
         <IconButton round size={30} noBg={false} name="account" />
         <Text fontSize={17}> {t('square')}: </Text>
         <IconButton size={30} noBg={false} name="account" />
         <Divider />
       </View>
-
+      <Button
+        onPress={() => {
+          dispatch(
+            setTheme({
+              ...defaultTheme,
+              colors: { ...defaultTheme.colors, primary: 'black' },
+            }),
+          );
+        }}
+        title="dark theme"
+      />
       <TextInput value={text} onChangeText={setText} />
       <Button
         onPress={toggleSpanish}

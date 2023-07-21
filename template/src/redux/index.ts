@@ -17,8 +17,8 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { IS_DEV } from '../utils/constants';
-import theme from './reducers/theme';
-import user from './reducers/user';
+import theme from './theme';
+import user from './user';
 
 const reducers = combineReducers({
   user,
