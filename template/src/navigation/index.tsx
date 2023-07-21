@@ -8,7 +8,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { useColorScheme } from 'react-native';
 import { ReactNavigationInstrumentation } from '@sentry/react-native';
-import { setTheme } from '../redux/actions/theme';
 import navigationList, {
   deepLinking,
 } from '../utils/constants/navigationList.constants';
@@ -19,6 +18,7 @@ import { defaultTheme } from '../utils/constants/theme.constants';
 import LoadingFullScreen from '../components/common/LoadingFullScreen/index';
 import useDispatch from '../hooks/useDispatch';
 import useSelector from '../hooks/useSelector';
+import { setTheme } from '../redux/theme';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 type NavigationProps = {
