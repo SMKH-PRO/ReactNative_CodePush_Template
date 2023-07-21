@@ -4,5 +4,6 @@
     ".env.production": "env",
     ".env.staging": "env",
     ".env.uat": "env"
-  }
+  },
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
