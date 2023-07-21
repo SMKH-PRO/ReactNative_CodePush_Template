@@ -69,3 +69,4 @@ codePushPrivateKey.pem
 .metro-health-check*
 # testing
 /coverage
+node_modules\.yarn-integrity
