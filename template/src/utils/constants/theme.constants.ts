@@ -2,30 +2,19 @@ import { DefaultTheme } from '@react-navigation/native';
 import { wp } from '../helpers/responsive.helpers';
 import { ThemeState } from '../types/redux/theme.type';
 
-const shadow = {
-  shadowColor: '#000',
-  shadowOffset: {
-    width: 0,
-    height: 4,
-  },
-  shadowOpacity: 0.32,
-  shadowRadius: 5.46,
-
-  elevation: 9,
-};
-
 const disabledBgColor = 'gray';
 
 const defaultTheme: ThemeState = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#246EE9',
-    secondary: '#1d83bc',
+    primary: '#1D83BC',
+    secondary: 'rgb(254,115,51)',
     primaryLite: '#FFE3D7',
-    background: '#fff',
-    backgroundLite: '#f6f8f9', // "#f5f5f5",
-    text: '#5d697b',
+    background: '#F2F7FD',
+    danger: 'red',
+    backgroundLite: '#FFF', // "#f5f5f5",
+    text: '#5D697B',
     textOnPrimaryBg: '#fff', // Color of text where background is primary
     disabledBgColor,
   },
@@ -33,7 +22,6 @@ const defaultTheme: ThemeState = {
   layout: {
     spacing: wp('3.5%'),
   },
-  shadow,
   dark: null,
 };
 export { disabledBgColor, defaultTheme };

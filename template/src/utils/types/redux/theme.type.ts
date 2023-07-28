@@ -25,11 +25,11 @@ export interface ThemeState {
     textOnPrimaryBg: string;
     border: string;
     notification: string;
+    danger: string;
   };
   layout: {
     spacing: number;
   };
-  shadow: Shadow;
 }
 
 export type DarkModePayload = {

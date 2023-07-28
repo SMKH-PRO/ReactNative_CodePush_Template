@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   env: {
     fontWeight: 'bold',
   },
+  fontSize: { fontSize: 17 },
 });
 
 export default styles;

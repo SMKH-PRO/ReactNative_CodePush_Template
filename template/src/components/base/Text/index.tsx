@@ -1,62 +1,20 @@
-import React, { useMemo } from 'react';
-import {
-  TextProps as RealTextProps,
-  Text as RealText,
-  TextStyle,
-  StyleSheet,
-} from 'react-native';
-import useTheme from '../../../hooks/useTheme';
+import React, { useMemo } from "react";
+import { StyleSheet, Text as RealText, TextProps } from "react-native";
+import styles from "./index.styles";
+import { MAX_FONT_SIZE_MULTIPLIER } from "../../../utils/constants";
 
-interface TextProps extends RealTextProps {
-  opacity?: TextStyle['opacity'];
-  fontWeight?: TextStyle['fontWeight'];
-  textTransform?: TextStyle['textTransform'];
-  fontSize?: TextStyle['fontSize'];
-  color?: TextStyle['color'];
-  letterSpacing?: TextStyle['letterSpacing'];
-}
-const Text = ({
-  style,
-  opacity,
-  children,
-  fontWeight,
-  textTransform,
-  fontSize,
-  color,
-  letterSpacing,
-  ...props
-}: TextProps) => {
-  const theme = useTheme();
-
+const Text = ({ style, children, ...props }: TextProps) => {
   const styleProp = useMemo(() => StyleSheet.flatten(style), [style]);
-
   return (
     <RealText
-      style={[
-        {
-          color: theme?.colors?.text,
-          opacity,
-          ...(fontWeight ? { fontWeight } : {}),
-          ...(textTransform ? { textTransform } : {}),
-          ...(fontSize ? { fontSize } : {}),
-          ...(color ? { color } : {}),
-          ...(letterSpacing ? { letterSpacing } : {}),
-        },
-        styleProp,
-      ]}
       // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}>
+      {...props}
+      maxFontSizeMultiplier={MAX_FONT_SIZE_MULTIPLIER}
+      style={[styles.default, styleProp]}
+    >
       {children}
     </RealText>
   );
 };
 
-Text.defaultProps = {
-  opacity: 1,
-  fontWeight: null,
-  textTransform: null,
-  fontSize: null,
-  color: null,
-  letterSpacing: null,
-};
 export default Text;

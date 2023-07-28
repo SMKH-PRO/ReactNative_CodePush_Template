@@ -10,6 +10,7 @@ const IS_DEV = __DEV__;
 const IS_APPLE = Platform.OS === 'ios';
 const IS_ANDROID = Platform.OS === 'android';
 const VERY_SMALL_DEVICE = WINDOW_WIDTH < 350;
+const MAX_FONT_SIZE_MULTIPLIER = 1.5;
 
 export {
   IS_DEV,
@@ -20,4 +21,5 @@ export {
   SCREEN_HEIGHT,
   WINDOW_HEIGHT,
   VERY_SMALL_DEVICE,
+  MAX_FONT_SIZE_MULTIPLIER,
 };

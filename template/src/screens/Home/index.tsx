@@ -65,9 +65,9 @@ const Home = () => {
       <Text style={styles.title}>Home {'\n\n'}</Text>
       <Text>IconButton:{'\n'}</Text>
       <View style={{ ...styles.row, backgroundColor: theme.colors.background }}>
-        <Text fontSize={17}> {t('round')}: </Text>
+        <Text style={styles.fontSize}> {t('round')}: </Text>
         <IconButton round size={30} noBg={false} name="account" />
-        <Text fontSize={17}> {t('square')}: </Text>
+        <Text style={styles.fontSize}> {t('square')}: </Text>
         <IconButton size={30} noBg={false} name="account" />
         <Divider />
       </View>
