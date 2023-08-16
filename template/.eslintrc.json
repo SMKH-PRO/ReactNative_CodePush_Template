@@ -5,8 +5,7 @@
     "node": true
   },
   "extends": [
-    "plugin:react/recommended",
-    "@react-native",
+    "plugin:react/all",
     "airbnb",
     "airbnb-typescript",
     "airbnb/hooks",
@@ -14,25 +13,28 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:react/jsx-runtime",
-    "plugin:promise/recommended"
+    "plugin:promise/recommended",
+    "plugin:react-native/all"
   ],
   "parserOptions": {
     "project": "./tsconfig.json",
-    "react/function-component-definition": [
-      2,
-      {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
-      }
-    ],
-    "ecmaFeatures": { 
+    "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["import", "react", "@typescript-eslint", "promise"],
+  "plugins": [
+    "import",
+    "react",
+    "@typescript-eslint",
+    "promise",
+    "prettier",
+    "@react-native-community",
+    "react",
+    "react-native"
+  ],
   "rules": {
     "@typescript-eslint/default-param-last": "warn",
     "@typescript-eslint/no-floating-promises": "warn",
@@ -43,9 +45,10 @@
     "no-promise-executor-return": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
-    "promise/always-return": "warn",
+    "react/sort-default-props": "off",
     "react/jsx-uses-react": 1,
     "@typescript-eslint/no-unused-vars": "error",
+    "react/jsx-no-bind": "error",
     "react/function-component-definition": [
       2,
       {
@@ -54,17 +57,19 @@
       }
     ],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ],
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     "endOfLine": "auto"
+    //   }
+    // ],
     "@typescript-eslint/no-misused-promises": [
       "error",
       {
         "checksVoidReturn": false
       }
-    ]
+    ],
+    "react-native/no-color-literals": "off",
+    "react-native/no-raw-text": "off"
   }
 }
