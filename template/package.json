@@ -49,7 +49,7 @@
     "react-native-exception-handler": "^2.10.10",
     "react-native-fast-image": "^8.6.3",
     "react-native-flash-message": "^0.4.1",
-    "react-native-flipper": "^0.206.0",
+    "react-native-flipper": "^0.207.0",
     "react-native-gradle-plugin": "^0.72.1",
     "react-native-image-progress": "^1.2.0",
     "react-native-restart": "^0.0.27",
