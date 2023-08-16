@@ -98,11 +98,9 @@ const Home = () => {
 
       <Text>{`\n\n${t('greetings.helloUser', { name: 'KASHAN ' })}`}</Text>
       <Text>{t('welcome')}</Text>
-      {lang && (
-        <Text>
+      {lang ? <Text>
           Language: {i18n?.language} {'\n\n'}
-        </Text>
-      )}
+        </Text> : null}
       <Text style={styles.env}>
         Environment:{' '}
         <Text style={{ color: theme?.colors?.primary }}>

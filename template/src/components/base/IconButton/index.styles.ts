@@ -1,33 +1,33 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  round: {
-    borderRadius: 100,
-  },
   button: {
+    alignItems: 'center',
     alignSelf: 'flex-start',
     borderRadius: 4,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    padding: 7,
     margin: 5,
+    padding: 7,
   },
   label: {
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  round: {
+    borderRadius: 100,
+  },
   shadowStyle: {
+    elevation: 7,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 3,
     },
     shadowOpacity: 0.29,
-    shadowRadius: 4.65,
 
-    elevation: 7,
+    shadowRadius: 4.65,
   },
 });
 

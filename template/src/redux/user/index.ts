@@ -6,7 +6,7 @@ const initialState: UserState = {
 };
 const user = createSlice({
   name: 'user',
-  initialState: initialState,
+  initialState,
   reducers: {
     setUser: (
       state: typeof initialState,

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { defaultTheme } from '../../utils/constants/theme.constants';
 import { ThemeState } from '../../utils/types/redux/theme.type';
@@ -7,7 +8,7 @@ const initialState = {
 };
 const theme = createSlice({
   name: 'theme',
-  initialState: initialState,
+  initialState,
   reducers: {
     switchDarkMode: (
       state: typeof initialState,

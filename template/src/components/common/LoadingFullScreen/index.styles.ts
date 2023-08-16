@@ -3,10 +3,10 @@ import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../../../utils/constants';
 
 const styles = StyleSheet.create({
   container: {
-    height: WINDOW_HEIGHT,
-    width: WINDOW_WIDTH,
-    justifyContent: 'center',
     alignItems: 'center',
+    height: WINDOW_HEIGHT,
+    justifyContent: 'center',
+    width: WINDOW_WIDTH,
   },
 });
 
