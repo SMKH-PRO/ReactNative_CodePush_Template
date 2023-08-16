@@ -7649,10 +7649,10 @@ react-native-flipper@^0.206.0:
   resolved "https://registry.npmjs.org/react-native-flipper/-/react-native-flipper-0.206.0.tgz"
   integrity sha512-QqSpA8+73zWgSrd87ZAPHBmh3biMKpgtpx+3ZH2opQfyNP5shWXo6iKpYt3L3un7ZkOQ8oF/9xiKgNkBAOXQ9g==
 
-react-native-gradle-plugin@^0.71.19:
-  version "0.71.19"
-  resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.19.tgz"
-  integrity sha512-1dVk9NwhoyKHCSxcrM6vY6cxmojeATsBobDicX0ZKr7DgUF2cBQRTKsimQFvzH8XhOVXyH8p4HyDSZNIFI8OlQ==
+react-native-gradle-plugin@^0.72.1:
+  version "0.72.1"
+  resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.72.1.tgz#4052452ba36b32f2271af9228707079dfda37e9d"
+  integrity sha512-mgFiUa9J/f7pKWxKWuPBdjrqahN1QxljWWYQefM45BEq21nbNGAk+vRI5WyjIQBu34JRCTuWy/pLSMDWwTfb5w==
 
 react-native-image-progress@^1.2.0:
   version "1.2.0"
