@@ -70,6 +70,7 @@
       }
     ],
     "react-native/no-color-literals": "off",
-    "react-native/no-raw-text": "off"
+    "react-native/no-raw-text": "off",
+    "no-param-reassign": ["error", { "props": false }]
   }
 }
