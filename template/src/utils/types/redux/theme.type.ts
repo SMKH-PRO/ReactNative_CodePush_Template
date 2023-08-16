@@ -1,16 +1,6 @@
 import { ThemeReducer } from '../../enums/reducers.enums';
 
-type Shadow = {
-  shadowColor: string;
-  shadowOffset: {
-    width: number;
-    height: number;
-  };
-  shadowOpacity: number;
-  shadowRadius: number;
 
-  elevation: number;
-};
 export interface ThemeState {
   dark: boolean | null;
   colors: {

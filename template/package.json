@@ -21,7 +21,9 @@
     "codepush-ios-stage": "appcenter codepush release-react -a owner/appName -d Staging -k codePushPrivateKey.pem --sourcemap-output --output-dir ./build",
     "codepush-ios-prod": "appcenter codepush release-react -a owner/Appname -d Production -k codePushPrivateKey.pem --sourcemap-output --output-dir ./build",
     "build": "cd android && ./gradlew assembleRelease && cd ../",
-    "build-staging": "cd android && ./gradlew assembleReleaseStaging && cd ../ "
+    "build-staging": "cd android && ./gradlew assembleReleaseStaging && cd ../ ",
+    "prettier": "prettier --write \"**/*.{js,ts,.tsx,json,md,html}\"",
+    "prettier:check": "prettier --check \"**/*.{js,ts,.tsx,json,md,html}\""
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.19.1",
@@ -48,7 +50,7 @@
     "react-native-fast-image": "^8.6.3",
     "react-native-flash-message": "^0.4.1",
     "react-native-flipper": "^0.207.0",
-    "react-native-gradle-plugin": "^0.71.19",
+    "react-native-gradle-plugin": "^0.72.1",
     "react-native-image-progress": "^1.2.0",
     "react-native-restart": "^0.0.27",
     "react-native-safe-area-context": "^4.7.1",
@@ -62,6 +64,14 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
+    "@react-native-community/eslint-plugin": "^1.3.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-native": "^4.0.0",
+    "typescript": "^5.1.6",
     "@babel/core": "^7.22.9",
     "@babel/runtime": "^7.22.6",
     "@commitlint/cli": "^17.6.7",
@@ -78,21 +88,16 @@
     "@types/react-native-snap-carousel": "^3.8.5",
     "@types/react-native-vector-icons": "^6.4.13",
     "@types/react-test-renderer": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
     "babel-jest": "^29.6.1",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "eslint": "^8.45.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
-    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.3",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
     "jest": "^29.6.1",
@@ -100,8 +105,7 @@
     "metro-config": "^0.77.0",
     "metro-react-native-babel-preset": "0.77.0",
     "prettier": "^3.0.0",
-    "react-test-renderer": "18.2.0",
-    "typescript": "^5.1.6"
+    "react-test-renderer": "18.2.0"
   },
   "jest": {
     "preset": "react-native",

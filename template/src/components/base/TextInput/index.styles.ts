@@ -4,63 +4,63 @@ import { wp } from "../../../utils/helpers/responsive.helpers";
 
 const minHeight = wp("14%", 70, 60);
 const styles = StyleSheet.create({
+  border: {
+    borderWidth: 0.4,
+  },
   containerStyle: {
-    margin: 0.5,
-    overflow: "hidden",
+    alignItems: "center",
+    borderColor: "silver",
     borderRadius: !VERY_SMALL_DEVICE ? wp("2%", 10) : wp("1%", 5),
     borderWidth: 0.5,
-    borderColor: "silver",
-    minHeight,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
-  },
-  leftContainerShow: {
-    padding: 5,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  leftContainerStyle: {
-    padding: 8,
-    paddingRight: 5,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  labelStyle: {
-    position: "absolute",
-    paddingRight: 5,
-    paddingBottom: 0,
-  },
-  inputStyle: {
-    marginTop: 2,
-    paddingTop: 20,
+    margin: 0.5,
     minHeight,
-    flex: 1,
-    color: "black",
-
-    paddingBottom: 8,
+    overflow: "hidden",
   },
-  textCont: { flex: 1, justifyContent: "center" },
   error: {
     fontSize: 11,
     marginLeft: 3,
     marginTop: -5,
   },
-  border: {
-    borderWidth: 0.4,
+  inputContainer: { alignItems: "center", flexDirection: "row" },
+  inputStyle: {
+    color: "black",
+    flex: 1,
+    marginTop: 2,
+    minHeight,
+    paddingBottom: 8,
+
+    paddingTop: 20,
+  },
+  labelStyle: {
+    paddingBottom: 0,
+    paddingRight: 5,
+    position: "absolute",
+  },
+  leftContainerShow: {
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 5,
+  },
+  leftContainerStyle: {
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 8,
+    paddingRight: 5,
   },
   shadow: {
+    elevation: 3,
     shadowColor: "rgba(0,0,0,0.7)",
     shadowOffset: {
       width: 0,
       height: 2,
     },
     shadowOpacity: 0.1,
-    shadowRadius: 5,
 
-    elevation: 3,
+    shadowRadius: 5,
   },
-  inputContainer: { flexDirection: "row", alignItems: "center" },
+  textCont: { flex: 1, justifyContent: "center" },
 });
 
 export default styles;
