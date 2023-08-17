@@ -35,7 +35,7 @@
     "appcenter-analytics": "^4.4.5",
     "appcenter-crashes": "^4.4.5",
     "axios": "^0.27.2",
-    "i18next": "^23.2.11",
+    "i18next": "^23.3.0",
     "lottie-react-native": "^5.1.6",
     "promise.allsettled": "^1.0.6",
     "react": "18.2.0",
