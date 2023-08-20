@@ -30,7 +30,7 @@
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
     "@reduxjs/toolkit": "^1.9.5",
-    "@sentry/react-native": "^5.7.1",
+    "@sentry/react-native": "^5.8.0",
     "appcenter": "^4.4.5",
     "appcenter-analytics": "^4.4.5",
     "appcenter-crashes": "^4.4.5",
