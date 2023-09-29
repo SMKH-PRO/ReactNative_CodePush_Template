@@ -104,7 +104,7 @@ const Home = () => {
       <Text style={styles.env}>
         Environment:{' '}
         <Text style={{ color: theme?.colors?.primary }}>
-          {ENVIRONMENTS?.ENV}
+          {ENVIRONMENTS?.NODE_ENV}
         </Text>
       </Text>
       <Text>
