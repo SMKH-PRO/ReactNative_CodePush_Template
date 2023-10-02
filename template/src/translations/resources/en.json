@@ -1,5 +1,5 @@
 {
-  "welcome": "Welcome to My Alfred",
+  "welcome": "Welcome to MyApp",
   "greetings": {
     "helloUser": "Hi {{name}}"
   },

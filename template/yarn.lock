@@ -6094,6 +6094,11 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-ios@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/lottie-ios/-/lottie-ios-3.4.0.tgz#a23be299760aefb44298b9cb5f60df489030adbf"
+  integrity sha512-qnV8UrawwnBRf5V0no2yxlPUE69vzfFqpxEEXGTZhb1/WX1xewqVNYvtbguqwQkdu9IT9D5WC1U9CHZ1KbkGDw==
+
 lottie-react-native@^5.1.6:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/lottie-react-native/-/lottie-react-native-5.1.6.tgz#6ae72829c3c0b95952dddd3d78c043f4dfbcb487"
@@ -7876,10 +7881,10 @@ react-native-flash-message@^0.4.1:
     prop-types "^15.8.1"
     react-native-iphone-screen-helper "^2.0.2"
 
-react-native-flipper@^0.207.0:
-  version "0.207.0"
-  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.207.0.tgz#a0e5576c2f80fac002dda678dfa431184a3348be"
-  integrity sha512-KG+uy74nCRHiK7t/sxn0oKlJTy7SkaJPnWK8WDaOBv98qRWFPdSlUtxki0guoPjmO7gAV+nZsiGDd+98oZSohg==
+react-native-flipper@^0.212.0:
+  version "0.212.0"
+  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.212.0.tgz#b3fdd47676ecd09a25edd77a1466acace6276762"
+  integrity sha512-bDRfIgE3v/jjEEdnvGP0T6maDD+bXhDAQ/SZUYTKd/CQ6YIU1c0EF+e0urU62LNMv6XEFQKz226McdddyVhYZA==
 
 react-native-gradle-plugin@^0.72.1:
   version "0.72.1"

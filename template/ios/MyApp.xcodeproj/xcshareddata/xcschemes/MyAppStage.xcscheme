@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
+   LastUpgradeVersion = "1430"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -10,13 +10,13 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cp &quot;${PROJECT_DIR}/../.env.production&quot; &quot;${PROJECT_DIR}/../.env.production&quot;&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;cp &quot;${PROJECT_DIR}/../.env.staging&quot; &quot;${PROJECT_DIR}/../.env&quot;&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-                     BuildableName = "MyApp.app"
-                     BlueprintName = "MyApp"
+                     BlueprintIdentifier = "38024F4D2AC7697F00F14F58"
+                     BuildableName = "MyAppStage.app"
+                     BlueprintName = "MyAppStage"
                      ReferencedContainer = "container:MyApp.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -32,31 +32,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "MyApp.app"
-               BlueprintName = "MyApp"
+               BlueprintIdentifier = "38024F4D2AC7697F00F14F58"
+               BuildableName = "MyAppStage.app"
+               BlueprintName = "MyAppStage"
                ReferencedContainer = "container:MyApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Staging"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "MyAppTests.xctest"
-               BlueprintName = "MyAppTests"
-               ReferencedContainer = "container:MyApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -72,15 +61,15 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MyApp.app"
-            BlueprintName = "MyApp"
+            BlueprintIdentifier = "38024F4D2AC7697F00F14F58"
+            BuildableName = "MyAppStage.app"
+            BlueprintName = "MyAppStage"
             ReferencedContainer = "container:MyApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Staging"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -89,18 +78,18 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "MyApp.app"
-            BlueprintName = "MyApp"
+            BlueprintIdentifier = "38024F4D2AC7697F00F14F58"
+            BuildableName = "MyAppStage.app"
+            BlueprintName = "MyAppStage"
             ReferencedContainer = "container:MyApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Staging">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Staging"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
