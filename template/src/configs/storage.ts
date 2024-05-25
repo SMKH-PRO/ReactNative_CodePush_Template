@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable promise/prefer-await-to-then */
 import asyncStorageLib from '@react-native-async-storage/async-storage';
-import EncryptedStorage from 'rn-secure-storage';
+import EncryptedStorage, { ACCESSIBLE } from 'rn-secure-storage';
 
 type GetDataType = { [key: string]: any };
 
@@ -38,7 +38,9 @@ const getData = (key: string): GetDataType =>
   });
 
 const setSecureItem = async (key: string, value: string) =>
-  EncryptedStorage.setItem(key, value);
+  EncryptedStorage.setItem(key, value, {
+    accessible: ACCESSIBLE.WHEN_UNLOCKED_THIS_DEVICE_ONLY,
+  });
 
 const getSecureItem = (key: string) => EncryptedStorage.getItem(key);
 
@@ -46,7 +48,11 @@ const setSecureData = (key: string, data: object) =>
   new Promise((resolve, reject) => {
     try {
       const value = JSON.stringify(data);
-      EncryptedStorage.setItem(key, value).then(resolve).catch(reject);
+      EncryptedStorage.setItem(key, value, {
+        accessible: ACCESSIBLE.WHEN_UNLOCKED_THIS_DEVICE_ONLY,
+      })
+        .then(resolve)
+        .catch(reject);
     } catch (e) {
       reject(e);
     }

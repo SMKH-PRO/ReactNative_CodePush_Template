@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios, { AxiosRequestConfig, InternalAxiosRequestConfig } from 'axios';
 import { IS_DEV } from '../utils/constants';
 import { devLog } from '../utils/helpers';
 import { secureStorage } from './storage';
@@ -18,18 +18,17 @@ const AXIOS = axios.create(reqConfig);
 
 export const setAuthToken = (token?: string) => {
   AXIOS.interceptors.request.use(async (config: AxiosRequestConfig) => {
-    let myConfig = config;
     const userToken = token || (await secureStorage.getItem('token'));
 
-    if (userToken) {
-      myConfig = {
-        ...config,
-        headers: {
-          ...(config?.headers || {}),
-          ...(userToken ? { Authorization: `Bearer ${userToken || ''}` } : {}),
-        },
-      };
-    }
+    const myConfig = {
+      ...config,
+      headers: {
+        ...(config?.headers || {}),
+        ...(userToken
+          ? { Authorization: `Bearer ${userToken || ''}` }
+          : { Authorization: false }),
+      },
+    } as InternalAxiosRequestConfig;
 
     return myConfig;
   });

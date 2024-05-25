@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  default: { fontFamily: 'Quicksand-SemiBold', overflow: 'hidden' },
+  default: { overflow: 'hidden' },
 });
 
 export default styles;
