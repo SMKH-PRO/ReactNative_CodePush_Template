@@ -5,6 +5,7 @@
     "node": true
   },
   "extends": [
+    "@react-native",
     "plugin:react/all",
     "airbnb",
     "airbnb-typescript",

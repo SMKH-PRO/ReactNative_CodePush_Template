@@ -1,6 +1,5 @@
 import { ThemeReducer } from '../../enums/reducers.enums';
 
-
 export interface ThemeState {
   dark: boolean | null;
   colors: {

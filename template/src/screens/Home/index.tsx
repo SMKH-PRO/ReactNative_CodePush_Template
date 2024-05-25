@@ -20,7 +20,6 @@ const arabic = 'ar';
 const english = 'en';
 const spanish = 'es';
 
-
 const Home = () => {
   const [text, setText] = useState<string>('');
   const theme = useTheme();
@@ -35,7 +34,6 @@ const Home = () => {
       setTimeout(() => {
         if (langsRTL.includes(newLang) && !I18nManager.isRTL) {
           I18nManager.forceRTL(true);
-         
         } else if (I18nManager.isRTL) {
           I18nManager.forceRTL(false);
         }
@@ -94,9 +92,11 @@ const Home = () => {
 
       <Text>{`\n\n${t('greetings.helloUser', { name: 'KASHAN ' })}`}</Text>
       <Text>{t('welcome')}</Text>
-      {lang ? <Text>
+      {lang ? (
+        <Text>
           Language: {i18n?.language} {'\n\n'}
-        </Text> : null}
+        </Text>
+      ) : null}
       <Text style={styles.env}>
         Environment:{' '}
         <Text style={{ color: theme?.colors?.primary }}>
