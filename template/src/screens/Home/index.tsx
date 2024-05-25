@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import RNRestart from 'react-native-restart'; // Import package from node modules
 import { View, I18nManager } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import Button from '../../components/base/Button';
@@ -21,8 +20,6 @@ const arabic = 'ar';
 const english = 'en';
 const spanish = 'es';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-const restartNow = () => RNRestart.Restart();
 
 const Home = () => {
   const [text, setText] = useState<string>('');
@@ -38,10 +35,9 @@ const Home = () => {
       setTimeout(() => {
         if (langsRTL.includes(newLang) && !I18nManager.isRTL) {
           I18nManager.forceRTL(true);
-          restartNow();
+         
         } else if (I18nManager.isRTL) {
           I18nManager.forceRTL(false);
-          restartNow();
         }
       }, 1000);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
