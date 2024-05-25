@@ -13,3 +13,4 @@
 -keep class com.facebook.jni.** { *; }
 -keep public class com.horcrux.svg.** {*;}
 -keep class com.myapp.BuildConfig { *; }
+-keepresources string/build_config_package
