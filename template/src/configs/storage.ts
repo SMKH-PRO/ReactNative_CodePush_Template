@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable promise/prefer-await-to-then */
 import asyncStorageLib from '@react-native-async-storage/async-storage';
-import EncryptedStorage from 'react-native-encrypted-storage';
+import EncryptedStorage from 'rn-secure-storage';
 
 type GetDataType = { [key: string]: any };
 

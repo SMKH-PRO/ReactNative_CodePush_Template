@@ -47,7 +47,6 @@
     "react-native-bootsplash": "^4.7.5",
     "react-native-code-push": "^8.0.2",
     "react-native-config": "^1.5.1",
-    "react-native-encrypted-storage": "^4.0.3",
     "react-native-exception-handler": "^2.10.10",
     "react-native-fast-image": "^8.6.3",
     "react-native-flash-message": "^0.4.1",
@@ -62,6 +61,7 @@
     "react-redux": "^8.1.1",
     "redux-flipper": "^2.0.2",
     "redux-persist": "^6.0.0",
+    "rn-secure-storage": "^3.0.1",
     "yup": "^1.2.0"
   },
   "devDependencies": {
