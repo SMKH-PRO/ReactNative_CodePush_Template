@@ -31,6 +31,7 @@
     "@react-navigation/native-stack": "^6.9.13",
     "@reduxjs/toolkit": "^1.9.5",
     "@sentry/react-native": "^5.7.1",
+    "@types/react": "^18.3.3",
     "appcenter": "^4.4.5",
     "appcenter-analytics": "^4.4.5",
     "appcenter-crashes": "^4.4.5",
@@ -72,8 +73,8 @@
     "@react-native/babel-preset": "^0.74.83",
     "@react-native/eslint-config": "^0.74.83",
     "@react-native/metro-config": "^0.72.9",
+    "@react-native/typescript-config": "^0.74.83",
     "@sentry/typescript": "^5.20.1",
-    "@tsconfig/react-native": "^3.0.2",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.2",
     "@types/promise.allsettled": "^1.0.3",
@@ -105,7 +106,7 @@
     "metro-config": "^0.77.0",
     "prettier": "^3.2.5",
     "react-test-renderer": "18.2.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.4.5"
   },
   "jest": {
     "preset": "react-native",
