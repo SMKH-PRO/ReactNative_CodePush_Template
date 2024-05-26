@@ -1,18 +1,20 @@
-name: Compile TS
+name: Lint & Prettify
 
 on:
   # Trigger the workflow on push or pull request,
   # but only for the main branch
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
       - develop
-      - development
 
 
 jobs:
   run-linters:
-    name: yarn build
+    name: Run linters
     runs-on: ubuntu-latest
 
     steps:
@@ -28,12 +30,16 @@ jobs:
       - name: Install  dependencies
         run: |
           if [ -e yarn.lock ]; then
-          yarn
+          yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
           npm ci
           else
           npm i
           fi
 
-      - name: Run Build
+      - name: Check linting
+        run: yarn lint
+      - name: Check prettier
+        run: yarn prettier:check
+      - name: TS  Checking
         run: yarn compile-ts
