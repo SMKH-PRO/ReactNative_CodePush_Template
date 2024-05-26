@@ -16,8 +16,6 @@
   [AppCenterReactNativeAnalytics registerWithInitiallyEnabled:true];
   [AppCenterReactNativeCrashes registerWithAutomaticProcessing];
 
-//  [RNBootSplash initWithStoryboard:@"LaunchScreen" rootView:rootView]; // <- initialization using the storyboard file name
-
 self.moduleName = @"MyApp";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
@@ -34,5 +32,11 @@ self.moduleName = @"MyApp";
   return [CodePush bundleURL];
 #endif
 }
+
+// ⬇️ Add this before file @end (when bridgeless is enabled)
+- (void)customizeRootView:(RCTRootView *)rootView {
+  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView]; // ⬅️ initialize the splash screen
+}
+
 
 @end

@@ -7,7 +7,6 @@
  *
  * @format
  */
-
 import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import {
@@ -47,6 +46,7 @@ if (!IS_DEV) {
               // ...
             }),
           ],
+          environment: IS_DEV ? 'development' : "",
           release: `${update.appVersion}+codepush:${update.label}`,
           dist: update.label,
         });
