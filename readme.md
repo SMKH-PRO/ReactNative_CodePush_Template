@@ -11,28 +11,30 @@ What It Contains?
 
 2. Build a different environment of code push release .
 
-3. Sentry (sentry.io) Setup (It will send you emails when there's a critical error found on the production app)
+3. Multiple enviornment support (Prod, Stage, UAT, Dev).
 
-4. Complete error handling (App won't just close/crash on critical error but will show a responsive error page with a button to re-launch the application) .
+4. Sentry (sentry.io) Setup (It will send you emails when there's a critical error found on the production app)
 
-5. Completely responsive basic UI components that are required in every app (such as Buttons)
+5. Complete error handling (App won't just close/crash on critical error but will show a responsive error page with a button to re-launch the application) .
 
-6. Typed Hooks ( 
+6. Completely responsive basic UI components that are required in every app (such as Buttons)
+
+7. Typed Hooks ( 
 useSelector, useDispatch, useTheme, more to come) .
 
-7. Complete redux integration with persisting and proper typescript types.
+8. Complete redux integration with persisting and proper typescript types.
 
-8. Integration of secure storage for saving confidential information like tokens
+9. Integration of secure storage for saving confidential information like tokens
 
-9. Navigation configured with an easily editable array of objects where you can define which route to show on auth and which to hide.
+10. Navigation configured with an easily editable array of objects where you can define which route to show on auth and which to hide.
 
-10. Translation support for multilingual apps.
+11. Translation support for multilingual apps.
 
-11. Configured with best eslint and typescript settings for react-native.
+12. Configured with best eslint and typescript settings for react-native.
 
-12. Redux managed useTheme Hook, easily use or change App's whole theme, such as programmatically changing to nightmode.
+13. Redux managed useTheme Hook, easily use or change App's whole theme, such as programmatically changing to nightmode.
 
-13. Last but not least, a clean folder structure and best practices are followed throughout the code.
+14. Last but not least, a clean folder structure and best practices are followed throughout the code.
 
 
 
